@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danger Game</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+<body>
+
+<div class="game-container">
+    <div id="main-menu-header">
+        <button id="reset-btn" onclick="resetGame()">🔄 Reset game</button>
+        <h1 id="main-title">રમત ના સ્તરો (LEVELS)</h1>
+        <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="game-play-area" class="hidden">
+        <h2 id="current-level-title"></h2>
+        <button class="back-btn" onclick="backToMenu()">🔙 Back to Menu</button>
+
+        <div id="music-game" class="hidden">
+            <div id="music-score">Score: 0</div>
+        </div>
+
+        <div id="catch-game" class="hidden">
+            <div id="score-board">Score: 0</div>
+            <div id="player"></div>
+        </div>
+
+        <div id="avoid-game" class="hidden">
+            <div id="avoid-timer">Time: 0</div>
+            <div id="avoid-player"></div>
+        </div>
+
+        <div id="boss-game" class="hidden">
+            <div id="boss-timer">Time: 0</div>
+            <div id="boss"></div>
+            <div id="boss-player"></div>
+        </div>
+
+        <div id="gun-game" class="hidden">
+            <div id="gun-score">Kills: 0</div>
+            <div id="gun-player"></div>
+        </div>
+
+        <div id="maze-game" class="hidden">
+            <div id="maze-container">
+                <div id="maze-player"></div>
+                <div id="maze-goal"></div>
+            </div>
+        </div>
+
+        <div id="reaction-game" class="hidden">
+            <button id="react-btn">WAIT...</button>
+        </div>
+
+        <div id="coming-soon" class="hidden">
+            <h2>🚧 Coming Soon 🚧</h2>
+            <p>Next level is coming soon...</p>
+        </div>
+    </div>
+</div>
+
+<script src="a.js"></script>
+</body>
+</html>
