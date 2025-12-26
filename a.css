@@ -1,0 +1,302 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+#reset-btn{
+  margin-top:15px;
+  padding:8px 20px;
+  font-size:16px;
+  border:none;
+  border-radius:20px;
+  background:#ff0844;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 0 10px #ff0844;
+}
+
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle,#1a1a2e,#16213e);
+  font-family:Arial;
+  color:white;
+}
+
+.game-container{
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow: 0 0 25px #000;
+  max-width: 450x; /* મહત્તમ પહોળાઈ નક્કી કરી */
+  width: 80%;
+  height: auto;
+}
+
+/* LEVEL GRID */
+.level-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap: 15px;
+  margin: top 20px;
+}
+
+.level-card{
+  width:65px;
+  height:65px;
+  background:#0f3460;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  font-size:24px;
+  font-weight:bold;
+  cursor:pointer;
+  margin: auto;
+}
+
+.level-card.locked{
+  background:#222;
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.hidden{display:none}
+
+/* MUSIC GAME */
+#music-game{
+  position:relative;
+  width:320px;
+  height:500px;
+  background:#111;
+  border:4px solid #00f2ff;
+  margin:auto;
+  overflow:hidden;
+}
+
+#music-score{
+  position:absolute;
+  top:10px;
+  width:100%;
+  text-align:center;
+  font-size:24px;
+  color:#00f2ff;
+}
+
+.tile{
+  position:absolute;
+  width:90px;
+  height:150px;
+  background:linear-gradient(#00f2ff,#0055ff);
+}
+
+/* CATCH GAME */
+#catch-game{
+  position:relative;
+  width:400px;
+  height:600px;
+  background:rgba(255,255,255,.05);
+  border-radius:15px;
+  overflow:hidden;
+}
+
+#player {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #00f2fe, #4facfe); /* Blue Glow */
+  position: absolute;
+  bottom: 20px;
+  left: 170px;
+  border-radius: 50%; /* Square se Circle ban gaya */
+  box-shadow: 0 0 15px #4facfe;
+  transition: left 0.1s ease-out; /* Smooth movement */
+}
+
+.falling-object{
+  width:35px;
+  height:35px;
+  background:#ff0844;
+  position:absolute;
+  border-radius:50%;
+}
+
+/* AVOID GAME */
+#avoid-game{
+  position:relative;
+  width:400px;
+  height:600px;
+  background:#000;
+  overflow:hidden;
+  border:3px solid red;
+  margin:auto;
+}
+
+#avoid-player{
+  width:50px;
+  height:50px;
+  background:lime;
+  position:absolute;
+  bottom:20px;
+  left:175px;
+  border-radius:10px;
+}
+
+.avoid-obstacle{
+  width:40px;
+  height:40px;
+  background:red;
+  position:absolute;
+  top:-40px;
+}
+
+/* BOSS GAME */
+#boss-game{
+  position:relative;
+  width:400px;
+  height:600px;
+  background:radial-gradient(circle,#200,#000);
+  overflow:hidden;
+  border:4px solid crimson;
+  margin:auto;
+}
+
+#boss{
+  width:120px;
+  height:120px;
+  background:darkred;
+  position:absolute;
+  top:20px;
+  left:140px;
+  border-radius:50%;
+  box-shadow:0 0 25px red;
+}
+
+#boss-player{
+  width:50px;
+  height:50px;
+  background:#00ffcc;
+  position:absolute;
+  bottom:20px;
+  left:175px;
+  border-radius:10px;
+}
+
+.boss-fire{
+  width:20px;
+  height:20px;
+  background:orange;
+  position:absolute;
+  border-radius:50%;
+  box-shadow:0 0 10px yellow;
+}
+
+#gun-game{
+  position:relative;
+  width:400px;
+  height:600px;
+  background:#111;
+  overflow:hidden;
+  border:3px solid cyan;
+}
+
+#gun-player{
+  width:50px;
+  height:50px;
+  background:lime;
+  position:absolute;
+  bottom:20px;
+  left:175px;
+}
+
+.bullet{
+  width:6px;
+  height:15px;
+  background:yellow;
+  position:absolute;
+}
+
+.enemy{
+  width:40px;
+  height:40px;
+  background:red;
+  position:absolute;
+  top:-40px;
+}
+
+/* MAZE GAME SECTION */
+#maze-game {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding: 20px;
+}
+
+#maze-container {
+  width: 350px;
+  height: 350px;
+  background: #1a1a2e; /* ડાર્ક બેકગ્રાઉન્ડ */
+  position: relative;
+  border: 4px solid #00aeff;
+  overflow: hidden; /* દીવાલો બહાર ન જાય */
+}
+
+.maze-wall {
+  position: absolute;
+  background: #ff0000; /* લાલ દીવાલો */
+  box-shadow: 0 0 8px #ff0000;
+  z-index: 5;
+}
+
+#maze-player {
+  width: 20px;
+  height: 20px;
+  background: cyan;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 10px cyan;
+  border-radius: 3px;
+}
+
+#maze-goal {
+  width: 25px;
+  height: 25px;
+  background: lime;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px lime;
+  z-index: 8;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #0f3460;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+/* SPEED REACTION */
+#reaction-game{
+  text-align:center;
+}
+
+#react-btn{
+  padding:30px;
+  font-size:24px;
+  background:red;
+  color:white;
+}
+
+/* COMING SOON */
+#coming-soon{
+  padding:40px;
+}
+
+.hidden {
+  display: none !important;
+}
